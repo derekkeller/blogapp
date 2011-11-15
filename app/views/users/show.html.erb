@@ -1,0 +1,38 @@
+<h2>
+	<%= @user.first_name + " " + @user.last_name %>'s Feed
+</h2>
+
+	<div id="left_container">
+		<% @user.microposts.each do |tweet| %>
+      <div id="tweet">
+      	<%= link_to tweet.user.first_name + " " + tweet.user.last_name, tweet.user %><br />
+      	<%= tweet.content %><br />
+      	<span style="color:#A9BBCC">Posted <%= time_ago_in_words(tweet.created_at) %> ago</span>
+      	<div id="tweet_delete">
+      		<%= link_to "X", tweet, :method => :delete, :confirm => "Are you sure" %>
+      	</div>
+      </div>
+		<% end %>
+	</div>
+	
+	<div id="right_container">
+		<div id="user_stats_container">
+			<%= render 'user_stats'%>
+		</div>
+	</div>
+
+  <div style="float: left; width:600px; margin-top: 10px">
+    <%= link_to 'Back to Users', users_path %>    
+  </div>
+
+
+<script>
+	$(document).ready(function() {
+		$('#unfollow_button').click(function() {
+			$('#user_stats_container').html("<%= escape_javascript(render 'user_stats') %>");
+		});
+		$('#follow_button').click(function() {
+			$('#user_stats_container').html("<%= escape_javascript(render 'user_stats') %>");
+		});
+	})
+</script>

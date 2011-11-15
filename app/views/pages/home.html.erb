@@ -1,0 +1,24 @@
+<h2>
+	<%= current_user.first_name + " " + current_user.last_name %>'s Feed	
+</h2>
+
+	<div id="left_container">
+		<% @microposts.each do |tweet| %>
+			<div id="tweet">
+				<%= link_to tweet.user.first_name + " " + tweet.user.last_name, tweet.user %><br />
+				<%= tweet.content %><br />
+				<span style="color:#A9BBCC">Posted <%= time_ago_in_words(tweet.created_at) %> ago</span>
+				<div id="tweet_delete">
+					<%= link_to "X", tweet, :method => :delete, :confirm => "Are you sure" %>
+				</div>
+			</div>
+		<% end %>
+	</div>
+	
+	<div id="right_container">
+		<div id="updateMe">
+			Tweets: <%= current_user.microposts.count %><br />
+			Following: <%= current_user.following.count %><br />
+			Followers: <%= current_user.followers.count %><br />
+		</div>
+	</div>

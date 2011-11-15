@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blogapp</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% if flash.any? %>
+  <div class="notice">
+    <%= notice %>
+  </div>
+<% elsif flash.any? %>
+  <div class="alert">
+    <%= alert %>
+  </div>
+<% end %>
+
+<div id="menu_header">
+  <%= link_to image_tag('twitter.png', :size => "75x75", :border => 0), :home, :style => 'float:left; margin-top:-10px; margin-left:-10px;' %>
+  <div id="menu_header_links">
+	<% if current_user %>
+		<%= link_to "Welcome " + current_user.first_name, :profile %> |
+		<%= link_to 'Community', users_path	 %> |
+		<%= link_to 'Logout', :logout %>
+	</div>
+	<%= link_to 'Edit Profile', edit_registration_path(current_user), :style => 'float: right; margin-top:8px; margin-right:10px' %>
+	<% else %>
+		<%= link_to 'Login', :login %> |
+		<%= link_to 'Signup', :signup %>	
+	<% end %>
+  </div>
+</div>
+<div id="main_container">
+  <%= yield %>
+	<p style="clear:both" />
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+</body>
+</html>

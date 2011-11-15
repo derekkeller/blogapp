@@ -1,0 +1,8 @@
+<h2>
+  Possible Friends on Twitter
+</h2>
+
+<% @users.each do |user| %>
+	<%= link_to user.first_name + " " + user.last_name, user %>
+	<br />
+<% end %>

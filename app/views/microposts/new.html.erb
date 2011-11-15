@@ -1,0 +1,4 @@
+<%= form_for([current_user, current_user.microposts.new], :remote => true) do |f| %>
+	<%= f.text_area :content, :size => "40x4"%><br />
+	<%= f.submit "Post" %>
+<% end %>

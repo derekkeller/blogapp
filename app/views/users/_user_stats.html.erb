@@ -1,0 +1,14 @@
+Tweets: <%= @user.microposts.count %><br />
+Following: <%= @user.following.count %><br />
+Followers: <%= @user.followers.count %><br />
+
+<% if current_user.following?(@user) %>
+	<%= form_for current_user.relationships.find_by_followed_id(@user.id), :html => {:method => :delete}, :remote => true do |f| %>
+		<%= f.submit "unfollow", :id => "unfollow_button" %>
+	<% end %>
+<% else %>
+	<%= form_for current_user.relationships.build(:followed_id => @user.id), :remote => true do |f| %>
+		<%= f.hidden_field :followed_id %>
+		<%= f.submit "follow", :id => "follow_button" %>
+	<% end %>
+<% end %>

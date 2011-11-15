@@ -1,0 +1,107 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree . 
+*/
+
+html, body {
+	background: url(b6.png) fixed 50%;
+	letter-spacing: -.1em;
+}
+
+#menu_header {
+	color: #3783B0;
+	border: 1px solid #3783B0;
+	border-radius: 3px;
+	background-color: #BADAEC;
+	position: relative;
+	padding: 10px;
+	height: 30px;
+	margin-bottom: 60px;
+	-webkit-box-shadow: 0 0 5px 2px #000;
+}
+
+#menu_header_links {
+	margin-top: 7px;
+	float: left;
+}
+
+#main_container {
+	width: 645px;
+	background-color: #FFF;
+	border: 1px solid #DADADA;
+	position: relative;
+	padding: 10px;
+	margin: auto;
+	-webkit-box-shadow: 0 0 5px 2px #000;
+	margin-bottom: 50px;
+}
+
+#left_container {
+	width: 400px;
+	border: 1px solid #E9E5F9;
+	background-color: #E9F5F5;
+	float: left;
+	padding: 10px;
+}
+
+#right_container {
+	color: #378358;
+	border: 1px solid #A0D6A6;
+	padding: 10px;
+	background-color: #BBEDD1;
+	width: 190px;
+	float: right;
+}
+
+#tweet {
+	margin-bottom: 20px;
+	border-top: 1px solid #E9E5F9;
+	position: relative;
+}
+
+#tweet_text {
+}
+
+#tweet_delete {
+	position: absolute;
+	top: 5px;
+	right: 0;}
+	#tweet_delete a:link, #tweet_delete a:visited {
+		border: 1px solid #E9F5F5;
+		padding: 3px;}
+	#tweet_delete a:hover {
+		text-decoration: none;
+		border: 1px solid;
+		background-color: #BADAEC;}
+
+
+.notice {
+	color: #32793A;
+	background-color: #BEF0C4;
+	border: 1px solid #78B87F;
+	border-radius: 3px;
+	padding: 5px;
+	margin-bottom: 5px;
+}
+
+.alert {
+	color: #914C4C;
+	background-color: #F5D3D3;
+	border: 1px solid #C48F8F;
+	border-radius: 3px;
+	padding: 5px;
+	margin-bottom: 5px;
+}
+
+#sucker {
+	margin-top: 10px;
+	padding: 20px;
+	font-size:12px;
+	background-color:#E7ADAD;
+	color:#AF3737;
+	border:solid 1px #AF3737;
+	display:none;
+}

@@ -1,0 +1,19 @@
+<h2>Welcome <%= current_user.first_name + " " + current_user.last_name %></h2>
+
+<div id="left_container">
+
+	What's happening?
+	
+	<%= render :file => '/microposts/new.html.erb' %><br />
+
+	<div id="microposts_container">
+		<%= render '/microposts/micropost' %>
+	</div>
+
+</div>
+
+<div id="right_container">
+	Tweets: <%= current_user.microposts.count %><br />
+	Following: <%= current_user.following.count %> <br />
+	Followers: <%= current_user.followers.count %>
+</div>

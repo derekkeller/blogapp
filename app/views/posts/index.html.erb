@@ -1,0 +1,28 @@
+<h1>Writing is Thinking Blog</h1>
+
+<%= form_tag posts_path, :method => :get, :remote => true do %>
+	<%= text_field_tag :search %>
+	<%= submit_tag :search %>
+<% end %><br />
+
+<table style="text-align:left">
+  <tr>
+    <th width="100px">Name</th>
+    <th width="100px">Title</th>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+  </tr>
+	<div id="posts">
+		<%= render @posts %>
+	</div>
+</table>
+
+
+<br />
+
+<%= link_to 'New Post', new_post_path %> |
+
+<%= link_to 'Enter Admin Role', "#", :class => "mylink", :data_me => "You are entering read-only access." %>
+
+<div id="sucker">Sorry, this is restricted to administrators only - please login (click to hide this notice)</div>

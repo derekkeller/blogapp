@@ -1,0 +1,7 @@
+<%= div_for comment do %>
+  <h3>
+    <%= comment.name %> said:
+  </h3>
+  <%= comment.content %><br />
+	<%= link_to 'Delete', [@post, comment], :confirm => 'Are you sure?', :method => :delete, :remote => true %>
+<% end %><br />
