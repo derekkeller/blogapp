@@ -5,11 +5,11 @@
 	<div id="left_container">
 		<% @microposts.each do |tweet| %>
 			<div id="tweet">
-				<%= link_to tweet.user.first_name + " " + tweet.user.last_name, tweet.user %><br />
+				<%= link_to [tweet.user.first_name, tweet.user.last_name].join(' '), tweet.user %><br />
 				<%= tweet.content %><br />
 				<span style="color:#A9BBCC">Posted <%= time_ago_in_words(tweet.created_at) %> ago</span>
 				<div id="tweet_delete">
-					<%= link_to "X", tweet, :method => :delete, :confirm => "Are you sure" %>
+					<%= link_to "X", tweet, :method => :delete, :confirm => "Are you sure", :remote => true %>
 				</div>
 			</div>
 		<% end %>

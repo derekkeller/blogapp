@@ -3,7 +3,7 @@
 </h2>
 
 	<div id="left_container">
-		<% @user.microposts.each do |tweet| %>
+		<% @microposts.each do |tweet| %>
       <div id="tweet">
       	<%= link_to tweet.user.first_name + " " + tweet.user.last_name, tweet.user %><br />
       	<%= tweet.content %><br />
